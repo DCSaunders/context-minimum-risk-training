@@ -6,7 +6,7 @@ Minimum Risk Training with context demo for the paper [Using Context in Neural M
 
 The paper introduces a variation on Minimum Risk Training (MRT) which groups samples in a minibatch into a `document' context. If each sample appears in one context, the objective function simplifies to be as for regular MRT, but with a different scoring function. This demo illustrates that scoring function.
 
-Sequence-level MRT (seq-MRT) would score sentences individually, possible according to sentence-level BLEU (sBLEU):
+Sequence-level MRT (seq-MRT) would score sentences individually, often according to sentence-level BLEU (sBLEU):
 ```
 sBLEU for seq-MRT:0.554788268632133     reference: this is an example   sample: this example
 sBLEU for seq-MRT:0.20774818714360088   reference: this is an example   sample: example
@@ -16,7 +16,7 @@ sBLEU for seq-MRT:0.7361703354503866    reference: so is this   sample: so so is
 sBLEU for seq-MRT:0.6514390575310556    reference: so is this   sample: is this
 ```
 
-However document-level MRT (doc-MRT) groups sentences into documents for scoring. Doing this randomly simply smooths the scores:
+However document-level MRT (doc-MRT) groups sentences into documents for scoring. Grouping randomly simply smooths the scores:
 
 ```
 BLEU for random doc-MRT: 0.33649609457427737    reference: ['this is an example', 'so is this'] sample: ['this example', 'so']
